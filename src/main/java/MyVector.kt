@@ -1,7 +1,8 @@
-import jdk.internal.util.ArraysSupport.MAX_ARRAY_LENGTH
 import kotlin.math.min
 
 open class MyVector <T: Any>(initialCapacity: Int = 10){
+    private val MAX_ARRAY_LENGTH = Int.Companion.MAX_VALUE - 8
+
     var elementData : Array<Any?> = arrayOfNulls(initialCapacity)
     var elementCount: Int = 0
 

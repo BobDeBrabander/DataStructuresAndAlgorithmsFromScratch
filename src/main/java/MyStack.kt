@@ -13,4 +13,6 @@ class MyStack<T: Any> : MyVector<T>() {
         addElement(element)
     }
 
+    fun isNotEmpty() = !this.isEmpty()
+
 }
