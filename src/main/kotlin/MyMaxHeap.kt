@@ -22,18 +22,15 @@ class MyMaxHeap : MyVector<Int> {
         val maxVal = this[0]
         this[0] = this.lastElement()
         this.removeLast()
-        maxHeapify(0)
+        maxHeapify(0, elementCount)
         return maxVal
     }
 
     fun heapSort(){
-        val originalCount = elementCount
         for (i in elementCount-1 downTo 1){
             swap(0, i)
-            elementCount--
-            maxHeapify(0)
+            maxHeapify(0, i)
         }
-        elementCount = originalCount
     }
 
     private fun parent(pos: Int) = ((pos + 1) / 2) - 1
@@ -47,14 +44,17 @@ class MyMaxHeap : MyVector<Int> {
         }
     }
 
-    private fun maxHeapify(pos: Int) {
+    /**
+     * Restores the maxHeap property from 'pos' until 'upto'
+     */
+    private fun maxHeapify(pos: Int, upto: Int) {
         val left = leftChild(pos)
         val right = rightChild(pos)
-        var largest = if (left < elementCount && this[left] > this[pos]) left else pos
-        largest = if (right < elementCount && this[right] > this[largest]) right else largest
+        var largest = if (left < upto && this[left] > this[pos]) left else pos
+        largest = if (right < upto && this[right] > this[largest]) right else largest
         if (largest != pos) {
             swap(largest, pos)
-            maxHeapify(largest)
+            maxHeapify(largest, upto)
         }
     }
 
