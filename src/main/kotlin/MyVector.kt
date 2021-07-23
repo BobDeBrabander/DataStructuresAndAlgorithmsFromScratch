@@ -1,3 +1,4 @@
+import java.lang.IndexOutOfBoundsException
 import kotlin.math.max
 import kotlin.math.min
 
@@ -66,14 +67,14 @@ open class MyVector <T: Any>{
         return data as T
     }
 
-    fun setElementAt(element: T, index: Int){
+    operator fun set(index: Int, element: T){
         if (index >= elementCount) {
             throw ArrayIndexOutOfBoundsException(index.toString() + " >= " + elementCount)
         }
         elementData[index] = element
     }
 
-    fun getElementAt(index: Int) = elementData(index)
+    operator fun get(index: Int) = elementData(index)
 
     fun addElement(element: T){
         ensureCapacity()
@@ -122,7 +123,10 @@ open class MyVector <T: Any>{
     }
 
     private fun elementData(index: Int): T {
-        return elementData[index] as T
+        if (index in 0 until elementCount) {
+            return elementData[index] as T
+        } else {
+            throw IndexOutOfBoundsException("Index passed '$index' out of range 0 to ${elementCount-1}")
+        }
     }
-
 }

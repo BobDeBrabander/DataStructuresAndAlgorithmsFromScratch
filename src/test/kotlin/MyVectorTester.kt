@@ -62,7 +62,7 @@ class MyVectorTester {
     fun `AddElement works`() {
         val vector = MyVector<Int>(1)
         vector.addElement(1)
-        val element = vector.getElementAt(0)
+        val element = vector.get(0)
         assertEquals(1, element, "element is not correctly inserted into vector")
     }
 
@@ -79,7 +79,7 @@ class MyVectorTester {
     fun `Last element can be removed from vector`() {
         val vector = MyVector(listOf(1, 2))
         vector.removeLast()
-        val element = vector.getElementAt(0)
+        val element = vector.get(0)
         assertEquals(1, element, "Wrong element is removed")
     }
 
@@ -87,7 +87,7 @@ class MyVectorTester {
     fun `First element can be removed from vector`() {
         val vector = MyVector(listOf(1, 2))
         vector.removeFirst()
-        val element = vector.getElementAt(0)
+        val element = vector.get(0)
         assertEquals(2, element, "Wrong element is removed")
     }
 
@@ -158,7 +158,7 @@ class MyVectorTester {
     @Test
     fun `SetElementAt works`(){
         val vector = MyVector(listOf(0, 1, 2, 4, 4, 5, 6))
-        vector.setElementAt(3, 3)
+        vector.set(3, 3)
         assertEquals(listOf(0, 1, 2, 3, 4, 5, 6), vector.toList(), "SetElementAt gone wrong")
     }
 
