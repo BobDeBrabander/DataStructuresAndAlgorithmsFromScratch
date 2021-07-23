@@ -1,10 +1,26 @@
+import java.lang.Integer.max
 import kotlin.math.min
 
-open class MyVector <T: Any>(initialCapacity: Int = 10){
+open class MyVector <T: Any>{
+    private var elementData : Array<Any?>
+    var elementCount: Int = 0
     private val MAX_ARRAY_LENGTH = Int.Companion.MAX_VALUE - 8
 
-    var elementData : Array<Any?> = arrayOfNulls(initialCapacity)
-    var elementCount: Int = 0
+    constructor(initialCapacity: Int = 10) {
+        if (initialCapacity < 0) throw IllegalArgumentException("Can not initialize Vector with negative size")
+        elementData = arrayOfNulls(initialCapacity)
+    }
+
+    constructor(c : Collection<T>){
+        elementData = c.toTypedArray()
+        elementCount = c.size
+    }
+
+    fun getSize() = elementCount
+
+    fun getCapacity() = elementData.size
+
+    fun toList() = elementData.slice(0 until elementCount).toList()
 
     fun isEmpty() : Boolean {
         return this.elementCount == 0
@@ -19,9 +35,7 @@ open class MyVector <T: Any>(initialCapacity: Int = 10){
         }
 
         ensureCapacity()
-        System.arraycopy(elementData, index,
-        elementData, index+1,
-        elementData.size - index)
+        elementData.copyInto(elementData, index+1, index, elementCount)
         elementData[index] = element
         elementCount++
     }
@@ -36,9 +50,7 @@ open class MyVector <T: Any>(initialCapacity: Int = 10){
         return if (index == elementCount - 1) removeLast()
         else {
             val data = elementData[elementCount-1]
-            System.arraycopy(elementData, index + 1,
-                    elementData, index,
-                    elementData.size - index - 1)
+            elementData.copyInto(elementData, index, index+1, elementCount)
             elementCount--
             data as T
         }
@@ -69,6 +81,14 @@ open class MyVector <T: Any>(initialCapacity: Int = 10){
         elementCount++
     }
 
+    fun addElements(elements: Collection<T>){
+        ensureCapacity(elements.size)
+        elements.forEach {
+            elementData[elementCount] = it
+            elementCount++
+        }
+    }
+
     fun firstElement() : T {
         if (elementCount == 0) throw NoSuchElementException()
         return elementData(0)
@@ -81,14 +101,23 @@ open class MyVector <T: Any>(initialCapacity: Int = 10){
 
 
     /**
-     * Internal functions
+     * Internal functions -----------------------------
      */
-    private fun ensureCapacity(){
-        if (elementCount == elementData.size) grow()
+
+    /**
+     * Will try to make at least `desiredEmptyCapacity` of space in `elementData`
+     */
+    private fun ensureCapacity(desiredEmptyCapacity: Int = 1){
+        val emptyCapacity = elementData.size - elementCount
+        if (desiredEmptyCapacity > emptyCapacity) grow(desiredEmptyCapacity - emptyCapacity)
     }
 
-    private fun grow(){
-        val newLength = min(elementData.size * 2, MAX_ARRAY_LENGTH)
+    /**
+     * Will grow `elementData` to max(elementData.size * 2, elementData.size + desiredGrowth) with an upperBound of `MAX_ARRAY_LENGTH`
+     */
+    private fun grow(desiredGrowth: Int = 1){
+        val desiredLength = max(elementData.size + desiredGrowth, elementData.size * 2)
+        val newLength = min(desiredLength, MAX_ARRAY_LENGTH)
         elementData = elementData.copyOf(newLength)
     }
 
