@@ -7,8 +7,8 @@ The ones I will implement are:
 - Trees
 - Tries
 - General Graph
-- Stack
+- Stack :heavy_check_mark:
 - Queue / Dequeue
-- Heap
-- Vector / ArrayList
+- Heap :heavy_check_mark:
+- Vector / ArrayList :heavy_check_mark:
 - HashTable
