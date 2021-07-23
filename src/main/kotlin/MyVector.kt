@@ -1,4 +1,4 @@
-import java.lang.Integer.max
+import kotlin.math.max
 import kotlin.math.min
 
 open class MyVector <T: Any>{
