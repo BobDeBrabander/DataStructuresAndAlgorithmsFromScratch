@@ -2,6 +2,8 @@ package datastructures
 
 import org.junit.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
+import kotlin.test.assertFalse
 
 class MyQueueTester {
 
@@ -43,5 +45,20 @@ class MyQueueTester {
         assertEquals(9, queue.pop(), "Not expected element")
         assertEquals(10, queue.pop(), "Not expected element")
         assertEquals(11, queue.pop(), "Not expected element")
+    }
+
+    @Test
+    fun `Offering to full queue returns false`() {
+        val queue = MyQueue(1)
+        queue.offer(5)
+        assertFalse(queue.offer(5), "Queue excepted element while it shouldn't have")
+    }
+
+    @Test
+    fun `Trying to pop on an empty queue gives NoSuchElementException`() {
+        val queue = MyQueue(1)
+        assertFailsWith(NoSuchElementException::class, "Queue was empty and should have thrown exception"){
+            queue.pop()
+        }
     }
 }

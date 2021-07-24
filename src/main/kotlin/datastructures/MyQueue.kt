@@ -9,7 +9,7 @@ class MyQueue (private val capacity: Int) {
     private val elementData = arrayOfNulls<Int>(capacity)
 
     fun pop(): Int {
-        if (elementData.isEmpty()) {
+        if (count == 0) {
             throw NoSuchElementException()
         }
         return dequeue()
@@ -24,16 +24,17 @@ class MyQueue (private val capacity: Int) {
         }
     }
 
-    fun enqueue(element: Int) {
+    private fun enqueue(element: Int) {
         elementData[pushIndex++] = element
         if (pushIndex == capacity) pushIndex = 0
+        count++
     }
 
-    fun dequeue() : Int {
+    private fun dequeue() : Int {
         val returnVal = elementData[takeIndex]
-        elementData[takeIndex] = null
-        takeIndex++
+        elementData[takeIndex++] = null
         if (takeIndex == capacity) takeIndex = 0
+        count--
         return returnVal ?: throw IllegalStateException("Element was supposed to be non-null but was null")
     }
 
