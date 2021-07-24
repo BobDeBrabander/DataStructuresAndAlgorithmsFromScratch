@@ -59,4 +59,6 @@ class MyMaxHeap : MyVector<Int> {
         this[pos2] = val1
         this[pos1] = val2
     }
+
+    fun isNotEmpty() = !this.isEmpty()
 }
