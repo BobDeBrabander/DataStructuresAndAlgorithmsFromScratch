@@ -48,17 +48,4 @@ class MyMaxHeapTester {
         maxHeap.insertElements(listOf(5, 12, 3, 18, 7))
         assertEquals(18, maxHeap.peekMax(), "Not expected max")
     }
-
-    @Test
-    fun `HeapSort works`() {
-        val maxHeap = MyMaxHeap()
-        maxHeap.insertElements(listOf(5, 12, 3, 18, 7, 21, 4, 95, 34, 2, 0, -6, 45))
-        maxHeap.heapSort()
-        assertEquals(
-                listOf(-6, 0, 2, 3, 4, 5, 7, 12, 18, 21, 34, 45, 95),
-                maxHeap.toList(),
-                "MaxHeap not correctly sorted"
-        )
-
-    }
 }

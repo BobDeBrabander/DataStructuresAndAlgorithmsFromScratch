@@ -28,13 +28,6 @@ class MyMaxHeap : MyVector<Int> {
         return maxVal
     }
 
-    fun heapSort(){
-        for (i in elementCount-1 downTo 1){
-            swap(0, i)
-            maxHeapify(0, i)
-        }
-    }
-
     private fun parent(pos: Int) = ((pos + 1) / 2) - 1
     private fun leftChild(pos: Int) = (2 * (pos + 1)) - 1
     private fun rightChild(pos: Int) = 2 * (pos + 1)
