@@ -1,3 +1,5 @@
+package datastructures
+
 import org.junit.Test
 import java.util.EmptyStackException
 import kotlin.test.assertEquals

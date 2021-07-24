@@ -1,3 +1,5 @@
+package datastructures
+
 /**
  * Heap class done on Integers. It can be done on other objects as well. This would require to comparables.
  */

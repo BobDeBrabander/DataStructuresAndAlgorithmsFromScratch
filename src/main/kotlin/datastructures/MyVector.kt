@@ -1,3 +1,5 @@
+package datastructures
+
 import java.lang.IndexOutOfBoundsException
 import kotlin.math.max
 import kotlin.math.min

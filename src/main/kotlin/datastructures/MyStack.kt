@@ -1,3 +1,5 @@
+package datastructures
+
 import java.util.EmptyStackException
 
 class MyStack<T: Any> : MyVector<T>() {
