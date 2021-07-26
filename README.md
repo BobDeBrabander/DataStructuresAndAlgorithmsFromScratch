@@ -19,4 +19,4 @@ The algorithms I will implement are:
 - Binary Search
 - Merge Sort
 - Quick Sort
-- Heap Sort
+- Heap Sort :heavy_check_mark:
