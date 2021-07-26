@@ -8,7 +8,7 @@ The datastructures I will implement are:
 - Tries
 - General Graph
 - Stack :heavy_check_mark:
-- Queue / Dequeue
+- Queue / Dequeue :heavy_check_mark:
 - Heap :heavy_check_mark:
 - Vector / ArrayList :heavy_check_mark:
 - HashTable
