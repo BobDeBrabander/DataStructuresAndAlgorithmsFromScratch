@@ -3,7 +3,7 @@
 In this project I'll implement some data structures and algorithms from scratch for learning purposes.
 
 The datastructures I will implement are:
-- LinkedList
+- LinkedList :heavy_check_mark:
 - Trees
 - Tries
 - General Graph
