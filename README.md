@@ -16,7 +16,7 @@ The datastructures I will implement are:
 The algorithms I will implement are:
 - Breadth-First Search
 - Depth-First Search
-- Binary Search
+- Binary Search :heavy_check_mark:
 - Merge Sort
 - Quick Sort
 - Heap Sort :heavy_check_mark:
