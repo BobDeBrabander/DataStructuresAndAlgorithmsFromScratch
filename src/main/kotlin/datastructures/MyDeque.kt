@@ -2,7 +2,10 @@ package datastructures
 
 import kotlin.IllegalStateException
 
-class MyQueue (private val capacity: Int) {
+/**
+ * Queue implementation with FIFO strategy, java implementation is Java.util.Deque
+ */
+class MyDeque (private val capacity: Int) {
     private var takeIndex : Int = 0
     private var pushIndex : Int = 0
     private var count : Int = 0

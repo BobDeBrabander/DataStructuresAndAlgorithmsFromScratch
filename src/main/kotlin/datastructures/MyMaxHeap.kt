@@ -1,7 +1,9 @@
 package datastructures
 
 /**
- * Heap class done on Integers. It can be done on other objects as well. This would require to comparables.
+ * Max heap class done on Integers. It can be done on other objects as well. This would require to comparables.
+ * The java implementation class is the PriorityQueue. The PriorityQueue implements a MinHeap by default.
+ * You can of course change this by passing along another Comparator.
  */
 class MyMaxHeap : MyVector<Int> {
 
