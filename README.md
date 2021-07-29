@@ -18,5 +18,5 @@ The algorithms I will implement are:
 - Depth-First Search
 - Binary Search :heavy_check_mark:
 - Merge Sort :heavy_check_mark:
-- Quick Sort
+- Quick Sort :heavy_check_mark:
 - Heap Sort :heavy_check_mark:
