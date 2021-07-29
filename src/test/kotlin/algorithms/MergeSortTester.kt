@@ -15,6 +15,13 @@ class MergeSortTester {
     }
 
     @Test
+    fun `single element merge sort test`(){
+        val listToSort = listOf(4)
+        val resultList = listToSort.mergeSort()
+        assertTrue(resultList.isSorted() && resultList.containsAll(listToSort), "list did not get properly sorted")
+    }
+
+    @Test
     fun `big merge sort test`(){
         val listToSort = listOf(4, 1, 8, 4, 5, 13, 12, 10, -6, -15, 3, 34, 26, 83, 7)
         val resultList = listToSort.mergeSort()
