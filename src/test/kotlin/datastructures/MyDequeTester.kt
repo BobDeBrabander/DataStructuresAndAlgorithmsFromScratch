@@ -9,7 +9,7 @@ class MyDequeTester {
 
     @Test
     fun `Inserting a series of elements and extracting them one by one`() {
-        val queue = MyDeque(5)
+        val queue = MyDeque<Int>(5)
         queue.offer(5)
         queue.offer(12)
         queue.offer(3)
@@ -26,7 +26,7 @@ class MyDequeTester {
 
     @Test
     fun `Inserting and extracting more intertwined and fully looping around array`() {
-        val queue = MyDeque(5)
+        val queue = MyDeque<Int>(5)
         queue.offer(5)
         queue.offer(12)
         assertEquals(5, queue.pop(), "Not expected element")
@@ -49,14 +49,14 @@ class MyDequeTester {
 
     @Test
     fun `Offering to full queue returns false`() {
-        val queue = MyDeque(1)
+        val queue = MyDeque<Int>(1)
         queue.offer(5)
         assertFalse(queue.offer(5), "Queue excepted element while it shouldn't have")
     }
 
     @Test
     fun `Trying to pop on an empty queue gives NoSuchElementException`() {
-        val queue = MyDeque(1)
+        val queue = MyDeque<Int>(1)
         assertFailsWith(NoSuchElementException::class, "Queue was empty and should have thrown exception"){
             queue.pop()
         }

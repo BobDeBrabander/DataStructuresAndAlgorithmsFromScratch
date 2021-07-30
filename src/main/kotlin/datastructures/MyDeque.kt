@@ -5,20 +5,20 @@ import kotlin.IllegalStateException
 /**
  * Queue implementation with FIFO strategy, java implementation is Java.util.Deque
  */
-class MyDeque (private val capacity: Int) {
+class MyDeque <T: Any>(private val capacity: Int) {
     private var takeIndex : Int = 0
     private var pushIndex : Int = 0
     private var count : Int = 0
-    private val elementData = arrayOfNulls<Int>(capacity)
+    private val elementData : Array<T?> = Array<Any?>(capacity, {null}) as Array<T?>
 
-    fun pop(): Int {
+    fun pop(): T {
         if (count == 0) {
             throw NoSuchElementException()
         }
         return dequeue()
     }
 
-    fun offer(element: Int) : Boolean{
+    fun offer(element: T) : Boolean{
         return if (count < capacity) {
             enqueue(element)
             true
@@ -27,13 +27,13 @@ class MyDeque (private val capacity: Int) {
         }
     }
 
-    private fun enqueue(element: Int) {
+    private fun enqueue(element: T) {
         elementData[pushIndex++] = element
         if (pushIndex == capacity) pushIndex = 0
         count++
     }
 
-    private fun dequeue() : Int {
+    private fun dequeue() : T {
         val returnVal = elementData[takeIndex]
         elementData[takeIndex++] = null
         if (takeIndex == capacity) takeIndex = 0
