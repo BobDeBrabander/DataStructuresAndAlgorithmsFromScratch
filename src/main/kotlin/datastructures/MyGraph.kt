@@ -5,6 +5,7 @@ class MyGraph {
     val edges = mutableListOf<MyEdge>()
 
     fun addEdge(n1: MyNode, n2: MyNode, weight: Int = 1) {
+        if (n1 == n2) throw NotAllowedException("Not allowed to create edge from a node to itself")
         if (edgeExists(n1, n2)) throw NotAllowedException("There already exists an edge from $n1 to $n2")
         val edge = MyEdge(n1, n2, weight)
         edges.add(edge)
