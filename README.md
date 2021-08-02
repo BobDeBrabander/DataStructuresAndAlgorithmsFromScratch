@@ -14,8 +14,8 @@ The datastructures I will implement are:
 - HashTable
 
 The algorithms I will implement are:
-- Breadth-First Search
-- Depth-First Search
+- Breadth-First Search :heavy_check_mark:
+- Depth-First Search :heavy_check_mark:
 - Binary Search :heavy_check_mark:
 - Merge Sort :heavy_check_mark:
 - Quick Sort :heavy_check_mark:
