@@ -6,7 +6,7 @@ The datastructures I will implement are:
 - LinkedList :heavy_check_mark:
 - Trees
 - Tries
-- General Graph
+- General Graph :heavy_check_mark:
 - Stack :heavy_check_mark:
 - Queue / Dequeue :heavy_check_mark:
 - Heap :heavy_check_mark:
