@@ -11,7 +11,7 @@ The datastructures I will implement are:
 - Queue / Dequeue :heavy_check_mark:
 - Heap :heavy_check_mark:
 - Vector / ArrayList :heavy_check_mark:
-- HashTable
+- HashTable :heavy_check_mark:
 
 The algorithms I will implement are:
 - Breadth-First Search :heavy_check_mark:
