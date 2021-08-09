@@ -54,13 +54,15 @@ class MyHashMap<K : Any, V : Any> {
         size++
     }
 
+    operator fun set (key: K, value: V) = put(key, value)
+
     fun containsKey(key: K): Boolean {
         var node = table[hash(key)]
         while (node != null && node.key != key) node = node.next
         return node != null && node.key == key
     }
 
-    fun get(key: K): V {
+    operator fun get(key: K): V {
         var node = table[hash(key)]
         while (node != null && node.key != key) node = node.next
         return if (node != null && node.key == key) node.value
