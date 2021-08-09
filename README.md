@@ -4,7 +4,7 @@ In this project I'll implement some data structures and algorithms from scratch 
 
 The datastructures I will implement are:
 - LinkedList :heavy_check_mark:
-- Trees
+- Trees :heavy_check_mark:
 - Tries
 - General Graph :heavy_check_mark:
 - Stack :heavy_check_mark:

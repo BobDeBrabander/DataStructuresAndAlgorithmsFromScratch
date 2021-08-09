@@ -2,13 +2,12 @@ package algorithms
 
 import datastructures.MyDeque
 import datastructures.MyGraph
-import datastructures.MyNode
-import datastructures.MyStack
+import datastructures.MyGraphNode
 
 object BreadthFirstSearch {
 
-    fun MyGraph.bfs(source: MyNode, target: MyNode): Int {
-        val queue = MyDeque<MyNode>(this.edges.size)
+    fun MyGraph.bfs(source: MyGraphNode, target: MyGraphNode): Int {
+        val queue = MyDeque<MyGraphNode>(this.edges.size)
         source.dist = 0
         source.visited = true
         queue.offer(source)

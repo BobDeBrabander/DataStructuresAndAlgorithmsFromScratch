@@ -2,7 +2,7 @@ package algorithms
 
 import algorithms.DepthFirstSearch.dfs
 import datastructures.MyGraph
-import datastructures.MyNode
+import datastructures.MyGraphNode
 import org.junit.Before
 import org.junit.Test
 import kotlin.test.assertFalse
@@ -11,14 +11,14 @@ import kotlin.test.assertTrue
 class MyDFSTester {
 
     private val graph = MyGraph()
-    private val node1 = MyNode(1)
-    private val node2 = MyNode(2)
-    private val node3 = MyNode(3)
-    private val node4 = MyNode(4)
-    private val node5 = MyNode(5)
-    private val node6 = MyNode(6)
-    private val node7 = MyNode(7)
-    private val node8 = MyNode(8)
+    private val node1 = MyGraphNode(1)
+    private val node2 = MyGraphNode(2)
+    private val node3 = MyGraphNode(3)
+    private val node4 = MyGraphNode(4)
+    private val node5 = MyGraphNode(5)
+    private val node6 = MyGraphNode(6)
+    private val node7 = MyGraphNode(7)
+    private val node8 = MyGraphNode(8)
 
     init {
         graph.addEdge(node1, node2)
